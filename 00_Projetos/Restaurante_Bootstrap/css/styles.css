@@ -1,0 +1,47 @@
+
+.container {
+    background-color: white;
+}
+
+body{
+    background-color: rgb(206, 35, 35);
+}
+
+.logo{
+    width: 35%;
+}
+
+h2{
+    font-family: sans-serif;
+}
+
+.texto{
+    font-family:verdana,sans-serif;
+    text-align: justify;
+    background-color: rgb(221, 207, 207);
+}
+
+.card-title{
+    color: red;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+
+.card-text{
+    font-family: sans-serif;
+}
+
+.img-thumbnail{
+    width: 85%;
+}
+
+.modal-body{
+    text-align: justify;
+}
+
+.footer {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    line-height: 2em;
+    font-family: sans-serif;
+}

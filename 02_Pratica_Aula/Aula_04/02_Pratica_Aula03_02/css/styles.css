@@ -1,0 +1,27 @@
+.classe1 {
+    background: blue;
+    width:800px;
+    height:800px;
+    position: relative;
+	top: 20px;
+	left: 30px;
+}
+
+.classe2 {
+    background: green;
+    width:400px;
+    height:400px;
+    position: absolute;
+	top: 20px;
+    left: 30px;
+   
+}
+
+.classe3 {
+    background: yellow;
+    position: relative;
+    width:200px;
+    height:200px; 
+    z-index: -1;    
+
+}

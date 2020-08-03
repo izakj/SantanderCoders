@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+    <title>Brasileirinho Delivery</title>
+
+</head>
+
+<body>
+    <div class="container mt-5" style="text-align: center">
+
+        <!--Navegação-->
+
+        <div class="row mb-4">
+            <nav class="navbar navbar-expand-md navbar-light fixed-top bg-warning">
+                <a class="navbar-brand" href="#banner">
+                    <img src="/images/logo.png" class="img-fluid logo"  alt="logo" href="logotipo">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#banner">Inicial <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#sobre">O Brasileirinho</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#cardapio">Cardápio</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href = "#contato" data-toggle="modal" data-target="#contato">Contato</a>
+                    </li>
+                  </ul>
+                </div>
+            </nav>
+        </div>
+
+        <!--Modal Contato-->
+        <div class="modal fade" id="contato" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Fale Conosco</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <form>
+                    <div class="form-group">
+                        <label for="recipient-name" class="col-form-label">Nome Completo:</label>
+                        <input type="text" class="form-control" id="recipient-name" placeholder="Nome Completo">
+                    </div>
+                    <div class="form-group">
+                        <label class="col-form-label">Gênero:</label>
+                        <br>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+                            <label class="form-check-label" for="inlineRadio1">Masculino</label>
+                          </div>
+                          <br>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+                            <label class="form-check-label" for="inlineRadio2">Feminino</label>
+                          </div>
+                          <br>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+                            <label class="form-check-label" for="inlineRadio3">Não-Binário</label>
+                          </div>
+                          <br>
+                          <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+                            <label class="form-check-label" for="inlineRadio4">Não quero informar</label>
+                          </div>
+                    
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email:</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="usuario@email.com">
+                    </div>
+                    <div class="form-group">
+                      <label for="message-text" class="col-form-label">Message:</label>
+                      <textarea class="form-control" id="message-text"></textarea>
+                    </div>
+                  </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Send message</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="row justify-content-center" id="banner">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img class="d-block w-100" src="/images/Banner01.png" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block w-100" src="/images/Banner02.PNG" alt="Second slide">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Próximo</span>
+                </a>
+              </div>
+        </div>
+        
+          <!-- SOBRE NÓS-->
+          <div class="row justify-content-center m-3" id="sobre">
+            <h2>
+                Sobre nós
+            </h2>
+            <div class="texto mx-3 p-4">
+                <p>Investir no ramo de franquias, mais do que isso, oferecer um produto diferenciado na área de alimentação. Este foi o desafio abraçado pelos empresários Jhonathan Ferreira e Adriano Massi no início de 2013. A tarefa não seria fácil, afinal, alimentação é um dos ramos mais concorridos do franchising brasileiro e disputar espaço com grandes cadeias exige muito fôlego.</p>
+                <p>Dispostos a ir adiante, os sócios chegaram à conclusão que faltava no mercado um restaurante delivery com comida típica brasileira, que oferecesse ao cliente a imbatível dupla arroz-feijão bem temperadinha, um feijão tropeiro de dar água na boca e um arroz de carreteiro que deixasse aquele gostinho de quero mais. “Nós tínhamos o caminho, mas naquele momento, ainda buscávamos um diferencial”, lembra Ferreira.</p>
+                <p>O diferencial veio da inspiração de uma das mais bem-sucedidas redes de franquia nacional. 
+                    Se o brasileiro gosta de comida chinesa na caixinha, por que não pedir uma comida bem caseira nos mesmos moldes? 
+                    Assim nasceu, em agosto de 2013, a <strong>Brasileirinho Delivery</strong>, inicialmente um ponto único, na cidade de São José do Rio Preto, interior de São Paulo. 
+                    No cardápio 12 pratos capitaneados pelo Brasileirinho (arroz, feijão, carne bovina, tomate, cebola, ovo, alho e cheiro verde), que dá nome à casa, a preços que não ultrapassavam na época a R$ 12. 
+                    “A aceitação foi imediata, nossa única mudança, foi desenhar um novo tipo de embalagem, também uma ‘caixa de papelão’, porém, com divisórias, para quem gosta de saborear cada ingrediente separadamente”.
+                </p>
+                <p>
+                    Hoje, 90% das unidades abertas contam com espaço para restaurante ou balcão e o que inicialmente tinha o perfil típico de loja de rua, ganhará, também, sua primeira unidade em Shopping Center, na cidade de Goiânia. “São as surpresas que a boa aceitação do negócio nos traz”, afirma o diretor de expansão.
+                </p>
+                <p>
+                    Para tanto, a rede oferece um forte programa de treinamento não só para os franqueados, mas também, para o gerente e para quem comandará a cozinha. Inicialmente, eles têm de passar cinco dias na sede da franqueadora, em São José do Rio Preto, onde absorvem o dia a dia da operação, inclusive preparando os alimentos e as caixinhas para entrega. Embora inicialmente a rede planejasse atuar com uma cozinha central e distribuir os pratos semi-prontos para a rede, o que vingou, na realidade, foi uma logística muito mais simples. “Como as receitas e os ingredientes são típicos do dia-a-dia do brasileiro, os ingredientes podem ser adquiridos no mercado local e as receitas preparadas seguindo-se o passo a passo no livro e no vídeo disponibilizado aos franqueados”, reforça Didone.
+                </p>
+            </div>
+
+        </div>
+
+        <!-- pratos -->
+        <div class="row justify-content-center m-3" id="cardapio">
+            <h2>
+                Cardápio
+            </h2>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 card" style="width: 14rem;">
+                ​<picture>
+                    <img class="img-fluid img-thumbnail card-img-top" src="/images/thumbnail_destaque_escondidinho-de-calabresa-e-bacon.jpg" alt="Card image cap">
+                </picture>
+                <div class="card-body">
+                <h5 class="card-title">Escondidinho de Calabresa e Bacon</h5>
+                <p class="card-text">Purê de batatas, muçarela, queijo parmesão, linguiça calabresa, bacon, cebola, tomate, cheiro verde e temperos.</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Mais Detalhes
+                </button>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card" style="width: 14rem;">
+                ​<picture>
+                    <img class="img-fluid img-thumbnail card-img-top" src="/images/thumbnail_destaque_escondidinho-de-camarao-com-catupiry.jpg" alt="Card image cap">
+                </picture>
+                <div class="card-body">
+                <h5 class="card-title">Escondidinho de Camarão com Catupiry</h5>
+                <p class="card-text">Purê de batatas, muçarela, camarão, queijo parmesão, cebola, molho branco, catupiry e temperos.</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Mais Detalhes
+                </button>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card" style="width: 14rem;">
+                ​<picture>
+                    <img class="img-fluid img-thumbnail card-img-top" src="/images/thumbnail_destaque_escondidinho-de-carne-moida-a-bolonhesa.jpg" alt="Card image cap">
+                </picture>
+                <div class="card-body">
+                <h5 class="card-title">Escondidinho de Carne Moída a Bolonhesa</h5>
+                <p class="card-text">Purê de batatas, muçarela, queijo parmesão, carne moída, tomate, molho e tomate, cheiro verde e temperos.</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Mais Detalhes
+                </button>
+                </div>
+            </div>
+            
+        </div> <!--div row pratos-->
+
+        <div class="row">
+            <div class="col-12 col-md-4 card" style="width: 14rem;">
+                ​<picture>
+                    <img class="img-fluid img-thumbnail card-img-top" src="/images/thumbnail_destaque_escondidinho-de-frango-com-catupiry.jpg" alt="Card image cap">
+                </picture>
+                <div class="card-body">
+                <h5 class="card-title">Escondidinho de Frango com Catupiry</h5>
+                <p class="card-text">Purê de batatas, muçarela, queijo parmesão, frango desfiado, tomate, milho, açafrão, cheiro verde e temperos.</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Mais Detalhes
+                </button>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card" style="width: 18rem;">
+                ​<picture>
+                    <img class="img-fluid img-thumbnail card-img-top" src="/images/thumbnail_destaque_polpettine.jpg" alt="Card image cap">
+                </picture>
+                <div class="card-body">
+                <h5 class="card-title">Polpettine</h5>
+                <p class="card-text">Macarrão alho e óleo, polpetines com tomates e molho de tomate, cheiro verde e temperos. Acompanha: Queijo parmesão ralado.</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Mais Detalhes
+                </button>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card" style="width: 18rem;">
+                ​<picture>
+                    <img class="img-fluid img-thumbnail card-img-top" src="/images/thumbnail_destaque_yakisoba-carne.jpg" alt="Card image cap">
+                </picture>
+                <div class="card-body">
+                <h5 class="card-title">Yakisoba de Carne</h5>
+                <p class="card-text">Macarrão tipo yakisoba, carne bovina em cubos, pimentão verde, cenoura, brócolis, repolho branco, acelga, molho para yakissoba, óleo de gergelim e temperos.</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Mais Detalhes
+                </button>
+                </div>
+            </div>
+            
+        </div> <!--div row pratos-->
+
+        <div class="row" id="ado">
+            <div class="col-12 col-md-4 card" style="width: 14rem;">
+                ​<picture>
+                    <img class="img-fluid img-thumbnail card-img-top" src="/images/thumbnail_destaque_yakisoba-de-camarao.jpg" alt="Card image cap">
+                </picture>
+                <div class="card-body">
+                <h5 class="card-title">Yakisoba de Camarão</h5>
+                <p class="card-text">Macarrão tipo yakisoba, carne bovina em cubos, pimentão verde, cenoura, brócolis, repolho branco, acelga, molho para yakissoba, óleo de gergelim e temperos.</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Mais Detalhes
+                </button>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card" style="width: 18rem;">
+                ​<picture>
+                    <img class="img-fluid img-thumbnail card-img-top" src="/images/thumbnail_destaque_yakisoba-especial.jpg" alt="Card image cap">
+                </picture>
+                <div class="card-body">
+                <h5 class="card-title">Yakisoba Especial</h5>
+                <p class="card-text">Macarrão tipo yakisoba, carne bovina, frango em cubos, camarão, pimentão verde, cenoura, brócolis, repolho branco, acelga, molho para yakissoba, óleo de gergelim e temperos.</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Mais Detalhes
+                </button>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 card" style="width: 18rem;">
+                ​<picture>
+                    <img class="img-fluid img-thumbnail card-img-top" src="/images/xthumbnail_destaque_estrogonofe-vegano-de-palmito.jpg" alt="Card image cap">
+                </picture>
+                <div class="card-body">
+                <h5 class="card-title">Estrogonofe Vegano de Palmito</h5>
+                <p class="card-text">Arroz branco, palmito, molho de tomate, champignon, creme de soja, e temperos. Acompanha: Batata palha.</p>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Mais Detalhes
+                </button>
+                </div>
+            </div>
+            
+        </div> <!--div row pratos-->
+
+
+
+
+        <!-- Modal-->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sobre o Box</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <div class="modal-body">
+                <p>
+                    Cada Box do Brasileirinho Delivery é preparado por profissionais altamente qualificados, com ampla experiência no ramo gastronômico, trabalhando sempre com ingredientes selecionados e de qualidade para você pedir online ou saborear em uma das nossas unidades.
+                </p>
+                </div>
+                <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+            </div>
+        </div>
+
+
+
+        <div class="row justify-content-center">
+            <div class="col-11 footer mt-5 bg-warning">
+                <i>*Imagens dos BOX meramente ilustrativas*</i><br>
+                Brasileirinho Delivery | Todos os direitos reservados  - 2020.
+            </div>
+        </div>
+
+    </div><!--div container-->
+
+
+    
+</body>
+
+    
+    
+</html>

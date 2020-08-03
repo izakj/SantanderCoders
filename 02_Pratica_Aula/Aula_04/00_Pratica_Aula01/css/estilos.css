@@ -1,0 +1,37 @@
+body {
+    background-color: #78909c;
+    font-family: "Epilogue";
+}
+
+h1 {
+    background-color:#78909c;
+    font-family: "Epilogue";
+    text-align: center;
+    font-style: italic;
+}
+
+h2 {
+    background-color:#78909c;
+    font-family: "Epilogue";
+    font-style: normal;
+    text-decoration: underline;
+    font-weight: initial;
+}
+
+li{
+    line-height: 23px;
+    font-size: 14px;
+    text-align: justify;
+}
+
+div{
+    line-height: 23px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.back {
+    line-height: 23px;
+    font-size: 12px;
+    text-align: justify;
+}
