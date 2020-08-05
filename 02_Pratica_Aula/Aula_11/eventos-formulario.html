@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <title>Eventos de click</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="jquery-2.2.1.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $(".div1").keydown(function(){
+                alert("Elemento Clicado");
+            });
+        });
+    
+    </script>
+</head>
+<body>
+    <input class="campo1" type="text">
+
+    <!--
+        focus
+        blur
+        change
+
+    -->
+
+    <select class="campo2">
+		<option value="1">Primeira opção</option>
+		<option value="2">Segunda opção</option>
+	</select>
+
+
+</body>
+</html>
