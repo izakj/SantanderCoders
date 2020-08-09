@@ -1,0 +1,4 @@
+Extensões VS Code
+
+AutoImport
+Bracket Pair Colorizer 2
