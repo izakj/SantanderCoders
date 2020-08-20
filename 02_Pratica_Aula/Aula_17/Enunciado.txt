@@ -1,0 +1,26 @@
+Crie um objeto chamado Contato com os atributos: id, nome, idade, telefone, Endereço(rua, numero, bairro, cidade, estado). Faça um programa para solicitar os dados de vários clientes e armazenar em um ArrayList até que se digite um número de ID negativo. Em seguida exiba os dados de todos os clientes via System.out.println() formatando cada objeto separando por linhas.
+System.out.printf("**** Menu Principal *****\n");
+System.out.printf("[ 1 ] Incluir Contato\n");
+System.out.printf("[ 2 ] Excluir Contato\n");
+System.out.printf("[ 3 ] Listar Contatos\n");
+System.out.printf("[ 4 ] Pesquisar Contato\n");
+System.out.printf("[ 0 ] Encerrar o Programa\n");
+System.out.printf("\nOpção Desejada: ");
+
+
+1 - Crie um objeto (Class) chamado Contato com os atributos: id, nome, idade, telefone. Faça um programa para solicitar os dados de vários contatos e armazenar em um ArrayList até que se digite um número de ID negativo. Em seguida exiba os dados de todos os clientes via System.out.println() formatando cada objeto separando por linhas.
+Contato - toString - (----------------------)+id+nome+idade+telefone
+
+
+2 - Endereço(rua, numero, bairro, cidade, estado)
+
+
+3 - System.out.printf("**** Menu Principal *****\n");
+System.out.printf("[ 1 ] Incluir Contato\n");
+System.out.printf("[ 2 ] Excluir Contato\n");
+System.out.printf("[ 3 ] Listar Contatos\n");
+System.out.printf("[ 4 ] Pesquisar Contato\n");
+System.out.printf("[ 0 ] Encerrar o Programa\n");
+System.out.printf("\nOpção Desejada: ");
+
+add, remove, for (get), for(id),
