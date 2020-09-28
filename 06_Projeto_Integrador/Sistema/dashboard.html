@@ -1,0 +1,512 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Pegada Ecológica | Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/stylesDashboard.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script>
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+        google.charts.setOnLoadCallback(drawStacked);
+
+        function drawStacked() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('date', 'Data');
+            data.addColumn('number', 'Alojamento');
+            data.addColumn('number', 'Alimentação');
+            data.addColumn('number', 'Transportes');
+            data.addColumn('number', 'Consumo');
+            data.addColumn('number', 'Resíduos');
+
+            data.addRows([
+                [new Date(2012, 3, 1), 5, 1, 3, 1, .25],
+                [new Date(2012, 4, 1), 2, 3, 0.5, 2, .5],
+                [new Date(2012, 5, 1), 5, 2, 2, 3, 1],
+                [new Date(2012, 6, 1), 5, 1, 3, 4, 2.25],
+                [new Date(2012, 7, 1), 2, 2, 3, 5, 2.25],
+                [new Date(2012, 8, 1), 5, 1, 1, 6, 3],
+                [new Date(2012, 9, 1), 1, 2, 3, 7, 4],
+                [new Date(2012, 10, 1), 5, 2, 2, 3, 1],
+                [new Date(2012, 11, 1), 5, 1, 3, 4, 2.25],
+            ]);
+
+            var options = {
+                isStacked: true,
+                legend: { position: 'top' },
+                hAxis: {
+                title: 'Mês/Ano',
+                },
+                vAxis: {
+                title: 'Hectares Globais (gha)'
+                }
+            };
+
+            var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+            chart.draw(data, options);
+        }
+    </script>
+  
+</head>
+<body>
+
+<!-- Start Container-Fluid Pegada -->
+<div class="container-fluid navbarPegada">
+<div class="container navbarPegada">
+    <div class="row rowPegada">
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom primary-color">
+        <a class="navbar-brand" href="index.html">
+        <img src="assets/images/navbar-icon.png" class="d-inline-block align-middle avatar"
+            alt="pegada ecologica logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                <a class="nav-link" href="index.html">Sair</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    </div>
+</div>
+</div>
+<!-- Ends Container-Fluid Pegada -->
+
+<!-- Start Container-Fluid Dashboard -->
+<div class="container-fluid dashboard">
+    <div class="container dashboard">
+        <div class="row dashboard">
+
+            <ul class="menuDashboard">
+                <li>
+                    <a href="#" class="colDashboard historic btnDashboard">Histórico</a>
+                </li>
+                <li>
+                    <a href="#" class="colDashboard update btnDashboard">Atualização</a>
+                </li>
+                <li>
+                    <a href="#" class="colDashboard tips btnDashboard">Dicas</a>                
+                </li>
+                <li>
+                    <a href="#" class="colDashboard configurations btnDashboard">Configurações</a>
+                </li>
+                <li>
+                    <a href="#" class="colDashboard adm btnDashboard">Administrativo</a>
+                </li>
+            </ul>
+            
+        </div>
+    </div>
+</div>
+<!-- Ends Container-Fluid Dashboard -->
+
+<!-- Start Container-Fluid ChartsPegada -->
+<div class="container-fluid chartsPegada">
+    <div class="container chartsPegada">
+        <!-- Start Insert Content to Historic -->
+        <div class="row chartsPegada historic">
+            <div class="col-12">
+                <h3>Histórico</h3>
+                <div id="chart_div"></div>
+            </div>
+        </div>
+        <!-- Ends Insert Content to Historic -->
+
+        <!-- Start Insert Content to Update -->
+        <div class="row chartsPegada update">
+            <div class="col-12">
+                <h3>Atualização</h3>
+                <p>
+                    It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                </p>
+
+                <form method="post" class="formAnlyzeQuetions" action="">
+                    
+                    <div class="questionToAnalyze">
+                        <h5>1 - Blablabla da pergunta </h5>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" class="question1" id="Aquestion1" name="question1" checked>
+                                blablablabla da alternativa 1
+                            </label>
+                        </div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" class="question1" id="Bquestion1" name="question1">
+                                blablablabla da alternativa 2
+                            </label>
+                        </div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" class="question1" id="Cquestion1" name="question1">
+                                blablablabla da alternativa 3
+                            </label>
+                        </div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" class="question1" id="Dquestion1" name="question1">
+                                blablablabla da alternativa 4
+                            </label>
+                        </div>     
+                    </div>
+
+                    <div class="questionToAnalyze">
+                        <h5>2 - Blablabla da pergunta </h5>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" class="question2" name="question2" id="Aquestion2" name="question2" checked>
+                                blablablabla da alternativa 1
+                            </label>
+                        </div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" class="question2" name="question2" id="Bquestion2" name="question2">
+                                blablablabla da alternativa 2
+                            </label>
+                        </div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" class="question2" name="question2" id="Cquestion2" name="question2">
+                                blablablabla da alternativa 3
+                            </label>
+                        </div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" class="question2" name="question2" id="Dquestion2" name="question2">
+                                blablablabla da alternativa 4
+                            </label>
+                        </div>     
+                    </div>
+
+                    <div class="questionToAnalyze">
+                        <h5>3 - Blablabla da pergunta </h5>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" class="question3" name="question3" type="radio" id="Aquestion3" name="question3" checked>
+                                blablablabla da alternativa 1
+                            </label>
+                        </div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" class="question3" name="question3" type="radio" id="Bquestion3" name="question3">
+                                blablablabla da alternativa 2
+                            </label>
+                        </div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" class="question3" name="question3" type="radio" id="Cquestion3" name="question3">
+                                blablablabla da alternativa 3
+                            </label>
+                        </div>
+
+                        <div class="radio">
+                            <label>
+                                <input type="radio" class="question3" name="question3" type="radio" id="Dquestion3" name="question3">
+                                blablablabla da alternativa 4
+                            </label>
+                        </div>     
+                    </div>
+
+                    <button type="submit" class="btn btn-primary toAnalyze">Calcular CO2</button>
+                  </form>
+            </div>
+        </div>
+        <!-- Ends Insert Content to Update -->
+
+        <!-- Start Insert Content to Tips -->
+        <div class="row chartsPegada tips">
+            <div class="col-12">
+                <h3>Dicas</h3>
+                <p>
+                    Existem várias atitudes que podem ajudar a diminuir sua Pegada Ecológica. Mudança de hábitos, rotinas ou até mesmo alerações na sua casa podem diminuir o carga imposta sobre os recursos naturais do planeta. Aqui você pode encontrar algumas dicas de como melhorar em cada uma das categorias analisadas na sua Pegada Ecológica.
+                </p>
+                <div class="dropdown show">
+                    <a class="btn btn-secondary dropdown-toggle btnChooseCategory" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Selecione a Categoria
+                    </a>
+                  
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                      <a class="dropdown-item cat1" href="#">Alojamento</a>
+                      <a class="dropdown-item cat2" href="#">Alimentação</a>
+                      <a class="dropdown-item cat3" href="#">Transportes</a>
+                      <a class="dropdown-item cat4" href="#">Consumo</a>
+                      <a class="dropdown-item cat5" href="#">Resíduos</a>
+                    </div>
+                </div>
+                <div class="contentCategory">
+                    <div class="row cat1">
+                        <span>Alojamento</span>
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                    </div>
+                    <div class="row cat2">
+                        <span>Alimentação</span>
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                    </div>
+                    <div class="row cat3">
+                        <span>Transportes</span>
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                    </div>
+                    <div class="row cat4">
+                        <span>Consumo</span>
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                    </div>
+                    <div class="row cat5">
+                        <span>Resíduos</span>
+                        There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- Ends Insert Content to Tips -->
+
+        <!-- Start Insert Content to Configurations -->
+        <div class="row chartsPegada configurations">
+            <h3>Configurações Gerais</h3>
+
+            <!--Starts Configuration Painel-->
+            <div class="col-12 squareConfigurations">
+                <h5>Configurações de Acesso</h5>
+
+                <form action="#" class="form-configurations">
+                    
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="mail">E-mail:</label>
+                                <input type="email" class="form-control" id="mail" placeholder="E-mail" required>
+                            </div>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="passwordOld">Senha antiga:</label>
+                                <input type="password" class="form-control" id="passwordOld" placeholder="Senha antiga" required>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="passwordNew">Nova senha:</label>
+                                <input type="password" class="form-control" id="passwordNew" placeholder="Nova senha" required>
+                            </div>   
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <div class="form-group">
+                                <label for="newPasswordConfirm">Confirmar nova senha:</label>
+                                <input type="password" class="form-control" id="newPasswordConfirm" placeholder="Confirme nova senha" required>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <button type="submit" id="btnUpdatePassword" class="btn btn-primary btnUpdatePassword">Alterar</button>
+
+                </form>
+
+
+            </div>
+            <!--Ends Configuration Painel-->
+
+        </div>
+        <!-- Ends Insert Content to Configurations -->
+
+        <!-- Start Insert Content to Administrator -->
+        <div class="row chartsPegada adm">
+            <h3>Administração</h3>
+
+            <!-- Start for Insert Qustion in the Database -->
+            <div class="col-12 squareInsertQuestion adm">
+                <form action="#" class="formInsertQuestion adm">
+                    <h5>Cadastro de Pergunta</h5>
+                    <div class="form-group">
+                        <label for="question">Pergunta:</label>
+                        <input type="text" class="form-control" id="question">
+                    </div>
+
+                    <!-- Starts Insert Answers -->
+                    <div class="row">
+                        <div class="col-12 col-lg-10">
+                            <label for="answerA">Alternativa A:</label>
+                            <input type="text" class="form-control" id="answerA">
+                        </div>
+
+                        <div class="col-12 col-lg-2">
+                            <label for="answerWeightA">Peso (A):</label>
+                            <input type="text" class="form-control" id="answerWeightA">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-lg-10">
+                            <label for="answerB">Alternativa B:</label>
+                            <input type="text" class="form-control" id="answerB">
+                        </div>
+
+                        <div class="col-12 col-lg-2">
+                            <label for="answerWeightB">Peso (B):</label>
+                            <input type="text" class="form-control" id="answerWeightB">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-lg-10">
+                            <label for="answerC">Alternativa C:</label>
+                            <input type="text" class="form-control" id="answerC">
+                        </div>
+
+                        <div class="col-12 col-lg-2">
+                            <label for="answerWeightC">Peso (C):</label>
+                            <input type="text" class="form-control" id="answerWeightC">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-lg-10">
+                            <label for="answerD">Alternativa D:</label>
+                            <input type="text" class="form-control" id="answerD">
+                        </div>
+
+                        <div class="col-12 col-lg-2">
+                            <label for="answerWeightD">Peso (D):</label>
+                            <input type="text" class="form-control" id="answerWeightD">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="selectStatusQuestion">Status da Pergunta</label>
+                                <select class="form-control" id="selectStatusQuestion">
+                                  <option>ATIVO</option>
+                                  <option>RASCUNHO</option>
+                                </select>
+                              </div>
+
+                        </div>
+                    </div>
+                    <!-- Ends Insert Answers -->
+
+                    <button type="submit" id="btnUpdateOrInsert" class="btn btn-primary toInsertQuestion">Cadastrar/Alterar</button>
+                </form>
+            </div>
+            <!-- Ends for Insert Qustion in the Database -->
+
+            <!-- Start To Show All Question of the Database -->
+            <div class="col-12 squareAllQuestions adm">
+                <h5>Todas as Perguntas Cadastradas</h5>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th></th>
+                        <th>Pergunta</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Bla bla bla da pergunta 1</td>
+                        <td>ATIVO</td>
+                        <td>
+                            <a href="#" data-idquestion="1" data-descriptionquestion="Bla bla bla da pergunta 1" class="text-danger font-weight-bold btnDeleteQuestion" >Excluir</a>
+                            
+                            <a href="#" data-idquestionupdate="1" data-descriptionquestionupdate="Bla bla bla da perunta 1"  class="text-success font-weight-bold btnUpdateQuestion" >Alterar</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Bla bla bla da pergunta 2</td>
+                        <td>RASCUNHO</td>
+                        <td>
+                            <a href="#" data-idquestion="2" data-descriptionquestion="Bla bla bla da pergunta 2" class="text-danger font-weight-bold btnDeleteQuestion" >Excluir</a>
+                            
+                            <a href="#" data-idquestionupdate="2" data-descriptionquestionupdate="Bla bla bla da perunta 2"  class="text-success font-weight-bold btnUpdateQuestion" >Alterar</a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td>Bla bla bla da pergunta 3</td>
+                        <td>ATIVO</td>
+                        <td>
+                            <a href="#" data-idquestion="3" data-descriptionquestion="Bla bla bla da pergunta 3" class="text-danger font-weight-bold btnDeleteQuestion" >Excluir</a>                            
+                            
+                            <a href="#" data-idquestionupdate="3" data-descriptionquestionupdate="Bla bla bla da perunta 3"  class="text-success font-weight-bold btnUpdateQuestion" >Alterar</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <!-- Ends To Show All Question of the Database -->
+        </div> 
+        <!-- Ends Insert Content to Administrator -->
+
+    </div>
+</div>
+<!-- Start Container-Fluid ChartsPegada -->
+
+
+<!-- Start Container-Fluid Footer -->
+<div class="container-fluid footer">
+<div class="container footer">
+    <div class="row footer">
+    <div class="col-xs-12 col-sm-4 col-md-4 colFooter">
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4 text-center text-white colFooter">
+        <h6>© Todos os direitos reservados.</h6>
+    </div>
+    <div class="col-xs-12 col-sm-4 col-md-4 colFooter">
+    </div>
+    </div>
+</div>
+</div>
+<!-- Ends Container-Fluid Footer -->
+
+<footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="assets/js/script.js"></script>
+</footer>
+
+</body>
+</html>
+
+<!--  Start Modal Confirm To Delete Question for Admintrative Panel -->
+<div class="modal" id="modalConfirmDeleteQuestion" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirmacão</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            <input id="idQuestionDelete" hidden type="text" value="1">
+          </button>
+        </div>
+        <div class="modal-body">
+            <h5>Deseja excluir&nbsp;<span id="descriptionDelete">blablabla</span>?</h5>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success" data-dismiss="modal">CANCELAR</button>
+          <button type="button" class="btn btn-danger efectDeleteQuestion" >EXCLUIR</button>
+        </div>
+      </div>
+    </div>
+</div>
+<!-- Ends Modal Confirm To Delete Question for Admintrative Panel -->
