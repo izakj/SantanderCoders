@@ -1,13 +1,10 @@
-<!-- <p>login-client works!</p>
-<a class="nav-link" routerLink="/dashboard">Dashboard</a> -->
-
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <title>Pegada Ecológica | Login</title>
+    <title>Pegada Ecológica | Cadastro</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
+    <!-- <link rel="stylesheet" href="assets/css/stylesRegister.css"> -->
 </head>
 <body>
 
@@ -16,9 +13,9 @@
     <div class="container navbarPegada">
       <div class="row rowPegada">
         <nav class="navbar navbar-expand-lg navbar-dark navbar-custom primary-color">
-          <a class="navbar-brand" routerLink="/login">
-            <img src="../../assets/images/navbar-icon.png" class="d-inline-block align-middle avatar"
-              alt="pegada ecologica logo">
+            <a class="navbar-brand" routerLink="/login">
+                <img src="../../assets/images/navbar-icon.png"class="d-inline-block align-middle avatar"
+                    alt="pegada ecologica logo">
           </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,10 +24,10 @@
     
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" routerLink="/login">Home<span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item active">
                 <a class="nav-link" routerLink="/register">Cadastro</a>
               </li>
               <li class="nav-item">
@@ -40,6 +37,11 @@
                 <a class="nav-link" routerLink="/about">Sobre</a>
               </li>
             </ul>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Entrar</a>
+              </li>
+            </ul>
           </div>
         </nav>
       </div>
@@ -47,36 +49,44 @@
   </div>
   <!-- Ends Container-Fluid Pegada -->
     
-  <!-- Start Container-Fluid Login -->
-  <div class="container-fluid login">
-    <div class="container login">
-      <div class="row login">
-        <!-- <h5 class="">Login</h5> -->
-        <br>
-        <form #loginForm="ngForm" class="form login">
-          <div class="form-label-group">
-            <label for="inputEmail">Usuário</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Usuário" required autofocus>
-          </div>
+  <!-- Start Container-Fluid Register -->
+  <div class="container-fluid register">
+    <div class="container register">
+      <div class="row register">
+        <form class="form register" action="dashboard.html">
+            <div class="form-label-group">
+                <label for="inputName">Nome</label>
+                <input type="name" id="inputName" class="form-control" placeholder="Nome" required autofocus>
+            </div>
 
-          <div class="form-label-group">
-            <label for="inputPassword">Senha</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
-          </div>
+            <div class="form-label-group">
+                <label for="inputSurname">Sobrenome</label>
+                <input type="name" id="inputSurname" class="form-control" placeholder="Sobrenome" required autofocus>
+            </div>
 
-          <div class="custom-control custom-checkbox mb-3">
-            <input type="checkbox" class="custom-control-input" id="customCheck1">
-            <label class="custom-control-label passwordRecovery" for="customCheck1">lembrar senha</label>
-          </div>
-          <button class="btnPegada" type="submit" routerLinkActive="active" routerLink="/dashboard">Entrar</button>
-          <a routerLink="/register" class="passwordRecovery" >Criar conta</a>
-          <br>
-          <a routerLink="/recovery" class="passwordRecovery">Recuperar senha</a>
+            <div class="form-label-group">
+                <label for="inputEmail">E-mail</label>
+                <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
+            </div>
+            
+            <div class="form-label-group">
+                <label for="inputPassword">Senha</label>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+            </div>
+
+            <div class="form-label-group">
+                <label for="inputConfirm">Confirme a senha</label>
+                <input type="password" id="inputConfirm" class="form-control" placeholder="Confirme a senha" required>
+            </div>
+                                  
+            <div>
+                <button type="submit" class="btnPegada">Registre-se</button>
+            </div>    
         </form>
       </div>
     </div>
   </div>
-  <!-- Ends Container-Fluid Login -->
+  <!-- Ends Container-Fluid Register -->
 
   <!-- Start Container-Fluid Footer -->
     <div class="container-fluid footer">
@@ -84,10 +94,10 @@
         <div class="row footer">
           <div class="col-xs-12 col-sm-4 col-md-4 colFooter">
             <ul class="socials">
-              <li><a href="#"><img src="../../assets/images/facebook-item.png"></a></li>
-              <li><a href="#"><img src="../../assets/images/instagram-item.png"></a></li>
-              <li><a href="#"><img src="../../assets/images/twitter-icon.png"></a></li>
-              <li><a href="#"><img src="../../assets/images/youtube-icon.png"></a></li>
+                <li><a href="#"><img src="../../assets/images/facebook-item.png"></a></li>
+                <li><a href="#"><img src="../../assets/images/instagram-item.png"></a></li>
+                <li><a href="#"><img src="../../assets/images/twitter-icon.png"></a></li>
+                <li><a href="#"><img src="../../assets/images/youtube-icon.png"></a></li>
             </ul>
           </div>
           <div class="col-xs-12 col-sm-4 col-md-4 text-center text-white colFooter">
@@ -97,7 +107,7 @@
             <div class="row">
               <div class="col-12">
                 <a href="/login">
-                  <img src="../../assets/images/navbar-icon.png" class="avatar-footer" alt="pegada ecologica logo">  
+                    <img src="../../assets/images/navbar-icon.png" class="avatar-footer" alt="pegada ecologica logo">  
                 </a>
               </div>
               <div class="col-12">

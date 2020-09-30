@@ -70,6 +70,9 @@ export class DashboardClientComponent implements OnInit {
                     scaleLabel:{
                       display: true,
                       labelString: "Mês"
+                    },
+                    gridLines:{
+                      display: false
                     }
                   }],
           yAxes: [{ 
@@ -77,6 +80,9 @@ export class DashboardClientComponent implements OnInit {
                     scaleLabel:{
                       display: true,
                       labelString: "Hectares Globais (gha)"
+                    },
+                    gridLines:{
+                      display: false
                     }
                   }]
         }

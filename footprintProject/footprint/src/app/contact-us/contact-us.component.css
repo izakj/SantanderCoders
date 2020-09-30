@@ -66,30 +66,23 @@
   
   
   
-  /* Start  Style Container-Fluid Login */
-  /* Start  Style Container-Fluid Login */
-  /* Start  Style Container-Fluid Login */
-  
-  .container.login{
+  /* Start  Style Container-Fluid Contact */
+  /* Start  Style Container-Fluid Contact */
+  /* Start  Style Container-Fluid Contact */
+
+  .container.contactPegada{
     display: flex;
     justify-content: center;
     padding: 30px 0px;
-    max-width: 400px;
+    max-width: 800px;
+    margin-top: 30px;
   }
-  
-  .container.login h5{
-    text-align: center;
-    font-size: 48px;
-    font-weight: 300;
-    color: #000;
-    text-transform: uppercase;
-  }
-  
-  .container.login .row.login{
+
+ .container.contactPegada .row.contactPegada{
     width: 100%;
   }
   
-  .container.login form.form.login{
+  .container.contactPegada form.form.contactPegada{
     border: 2px solid #5FB739;
     border-radius: 20px;
     padding: 50px;
@@ -97,17 +90,18 @@
     width: 100%;
     color: #fff;
     background-color:#5fb73961;
-    margin-top: 22%;
+    margin-top: 10px;
     text-align: center;
   }
   
-  .container.login form.form.login input{
+  .container.contactPegada form.form.contactPegada input,
+  .container.contactPegada form.form.contactPegada textarea{
     border:2px solid #5FB739;
     border-radius: 20px;
   }
   
-  .container.login form.form.login label{
-    font-size: 22px;
+  .container.contactPegada form.form.contactPegada label{
+    font-size: 16px;
     color: #fff;
     text-transform: uppercase;
     font-weight: 400;
@@ -118,39 +112,29 @@
     float: left;
   }
   
-  .container.login form.form.login .passwordRecovery{
-    font-size: 16px;
-    padding: 0;
-    text-transform: lowercase;
-    width: 100%;
-    color: #fff;
-    margin: 2px 0;
-    text-decoration: none;
-  }
-  
-  .container.login form.form.login .btnPegada{
+  .container.contactPegada form.form.contactPegada .btnPegada{
     border-radius: 50px;
     border: 2px solid #5FB739;
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 20px;
     padding: 10px 4px;
-    width: 100%;
+    min-width: 150px;
     font-weight: 400;
     background-color: transparent;
     color: #fff;
-    margin-bottom: 20px;
+    margin-top: 40px;
   }
   
-  .container.login form.form.login .btnPegada:hover{
+  .container.contactPegada form.form.contactPegada .btnPegada:hover{
     background-color: #5FB739;
     color: #fff;
     font-weight: 600;
     box-shadow: 4px 4px 6px #000;
-  
   }
-  /* Ends  Style Container-Fluid Login */
-  /* Ends  Style Container-Fluid Login */
-  /* Ends  Style Container-Fluid Login */
+
+  /* Ends  Style Container-Fluid Contact */
+  /* Ends  Style Container-Fluid Contact */
+  /* Ends  Style Container-Fluid Contact */
   
   
   /* Start  Style Container-Fluid Footer */
@@ -224,7 +208,7 @@
   
   @media(max-width:1366px){
     
-    .container-fluid.login {
+    .container-fluid.contactPegada {
       min-height: 860px;
     }
   
