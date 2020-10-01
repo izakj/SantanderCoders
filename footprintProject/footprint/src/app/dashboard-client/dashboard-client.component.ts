@@ -32,7 +32,7 @@ export class DashboardClientComponent implements OnInit {
   insertChart(){
     
     var myChart = new Chart('canvas', {
-      type: 'horizontalBar',
+      type: 'bar',
       data: {
         labels: ['Janeiro', 'Fevereiro', 'Março','Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
         datasets: [
@@ -65,12 +65,13 @@ export class DashboardClientComponent implements OnInit {
       },
       options: {
         responsive: true,
+        maintainAspectRatio: false,
         scales: {
           xAxes: [{ 
                     stacked: true,
                     scaleLabel:{
                       display: true,
-                      labelString: "Hectares Globais (gha)"
+                      labelString: "Mês" 
                     },
                     gridLines:{
                       display: false
@@ -80,7 +81,7 @@ export class DashboardClientComponent implements OnInit {
                     stacked: true,
                     scaleLabel:{
                       display: true,
-                      labelString: "Mês"
+                      labelString: "Hectares Globais (gha)"
                     },
                     gridLines:{
                       display: false
