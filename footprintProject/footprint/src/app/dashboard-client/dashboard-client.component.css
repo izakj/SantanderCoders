@@ -142,7 +142,7 @@
   /* Start Style Container-Fluid ChartsPegada */
   
   .container-fluid.chartsPegada{
-    padding: 30px 0;
+    padding: 30px 2px;
     min-height: 900px;
     position: relative;
   } 
@@ -281,7 +281,7 @@
     padding: 6px;
     border: 2px solid #5FB739;
     border-radius: 10px;
-    margin-top: 10px;
+    margin-bottom: 20px;
   }
 
   .container-fluid.chartsPegada  .row.chartsPegada form.formInsertQuestion{
@@ -334,7 +334,7 @@
     background-color: #5FB739;
     text-align: center;
     justify-content: center;
-    position: fixed;
+    position: absolute;
     bottom: 0;
   }
   
@@ -381,7 +381,7 @@
     }
   }
   
-  @media(max-width:1366px){
+  /* @media(max-width:1366px){
     
     .container-fluid.login {
       min-height: 860px;
@@ -391,6 +391,6 @@
       min-height: 1920px;
     }
   
-  }
+  } */
   
   
