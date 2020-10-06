@@ -53,30 +53,55 @@
   <div class="container-fluid register">
     <div class="container register">
       <div class="row register">
-        <form class="form register" action="dashboard.html">
+        <form [formGroup]="formulario" class="form register" (ngSubmit)="cadastrar()">
             <div class="form-label-group">
                 <label for="inputName">Nome</label>
-                <input type="name" id="inputName" class="form-control" placeholder="Nome" required autofocus>
+                <input type="name" id="inputName" class="form-control" placeholder="Nome" formControlName="inputName" autofocus
+                [class]="(submitted && formulario.get('inputName').errors) || 
+                (formulario.get('inputName').errors && formulario.get('inputName').dirty) ? 'is-invalid' : 
+                formulario.get('inputName').dirty ? 'is-valid' : '' "/>
+                <div *ngIf="formulario.get('inputName').errors?.required" 
+                  class="invalid-feedback" >
+                    Campo nome é obrigatório!
+                </div>
             </div>
 
             <div class="form-label-group">
                 <label for="inputSurname">Sobrenome</label>
-                <input type="name" id="inputSurname" class="form-control" placeholder="Sobrenome" required autofocus>
+                <input type="name" id="inputSurname" class="form-control" placeholder="Sobrenome" formControlName="inputSurname" 
+                [class]="(submitted && formulario.get('inputSurname').errors) || 
+                         (formulario.get('inputSurname').errors && formulario.get('inputSurname').dirty) ? 'is-invalid' : 
+                         formulario.get('inputSurname').dirty ? 'is-valid' : '' "/>
+                <div *ngIf="formulario.get('inputSurname').errors?.required"
+                  class="invalid-feedback" >
+                    Campo sobrenome é obrigatório!
+                </div>
             </div>
 
             <div class="form-label-group">
                 <label for="inputEmail">E-mail</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" required autofocus>
+                <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" formControlName="inputEmail" 
+                [class]="(submitted && formulario.get('inputEmail').errors) || 
+                (formulario.get('inputEmail').errors && formulario.get('inputEmail').dirty) ? 'is-invalid' : 
+                formulario.get('inputEmail').dirty ? 'is-valid' : '' "/>
+                <div *ngIf="formulario.get('inputEmail').errors?.required"
+                  class="invalid-feedback" >
+                    Campo e-mail é obrigatório!
+                </div>
+                <div *ngIf="formulario.get('inputEmail').errors?.email"
+                class="invalid-tooltip" >
+                  E-mail inválido!
+              </div>
             </div>
             
             <div class="form-label-group">
                 <label for="inputPassword">Senha</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Senha" required>
+                <input type="password" id="inputPassword" class="form-control" placeholder="Senha" formControlName="inputPassword" >
             </div>
 
             <div class="form-label-group">
                 <label for="inputConfirm">Confirme a senha</label>
-                <input type="password" id="inputConfirm" class="form-control" placeholder="Confirme a senha" required>
+                <input type="password" id="inputConfirm" class="form-control" placeholder="Confirme a senha" >
             </div>
                                   
             <div>
