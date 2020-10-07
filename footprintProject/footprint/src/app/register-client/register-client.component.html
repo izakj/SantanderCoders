@@ -62,7 +62,7 @@
                 formulario.get('inputName').dirty ? 'is-valid' : '' "/>
                 <div *ngIf="formulario.get('inputName').errors?.required" 
                   class="invalid-feedback" >
-                    Campo nome é obrigatório!
+                  <p>Campo nome é obrigatório!</p>
                 </div>
             </div>
 
@@ -74,34 +74,52 @@
                          formulario.get('inputSurname').dirty ? 'is-valid' : '' "/>
                 <div *ngIf="formulario.get('inputSurname').errors?.required"
                   class="invalid-feedback" >
-                    Campo sobrenome é obrigatório!
+                  <p>Campo sobrenome é obrigatório!</p>
                 </div>
             </div>
 
             <div class="form-label-group">
-                <label for="inputEmail">E-mail</label>
-                <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" formControlName="inputEmail" 
-                [class]="(submitted && formulario.get('inputEmail').errors) || 
-                (formulario.get('inputEmail').errors && formulario.get('inputEmail').dirty) ? 'is-invalid' : 
-                formulario.get('inputEmail').dirty ? 'is-valid' : '' "/>
-                <div *ngIf="formulario.get('inputEmail').errors?.required"
-                  class="invalid-feedback" >
-                    Campo e-mail é obrigatório!
-                </div>
-                <div *ngIf="formulario.get('inputEmail').errors?.email"
-                class="invalid-tooltip" >
-                  E-mail inválido!
+              <label for="inputEmail">E-mail</label>
+              <input type="email" id="inputEmail" class="form-control" placeholder="E-mail" formControlName="inputEmail" 
+              [class]="(submitted && formulario.get('inputEmail').errors) || 
+              (formulario.get('inputEmail').errors && formulario.get('inputEmail').dirty) ? 'is-invalid' : 
+              formulario.get('inputEmail').dirty ? 'is-valid' : '' "/>
+              <div *ngIf="formulario.get('inputEmail').errors?.required"
+                    class="invalid-feedback" >
+                    <p>Campo e-mail é obrigatório!</p>
+              </div>
+              <div *ngIf="formulario.get('inputEmail').errors?.email"
+                    class="invalid-feedback" >
+                <p>E-mail inválido!</p>
               </div>
             </div>
             
             <div class="form-label-group">
                 <label for="inputPassword">Senha</label>
-                <input type="password" id="inputPassword" class="form-control" placeholder="Senha" formControlName="inputPassword" >
+                <input type="password" id="inputPassword" class="form-control" placeholder="Senha" formControlName="inputPassword" 
+                [class]="(submitted && formulario.get('inputPassword').errors) || 
+                    (formulario.get('inputPassword').errors && formulario.get('inputPassword').dirty) ? 'is-invalid' : 
+                    formulario.get('inputPassword').dirty ? 'is-valid' : '' "/>
+                    <div *ngIf="formulario.get('inputPassword').errors?.required"
+                          class="invalid-feedback" >
+                          <p>Campo senha é obrigatório!</p>
+                    </div>
             </div>
 
             <div class="form-label-group">
-                <label for="inputConfirm">Confirme a senha</label>
-                <input type="password" id="inputConfirm" class="form-control" placeholder="Confirme a senha" >
+              <label for="inputConfirm">Confirme a senha</label>
+              <input type="password" id="inputConfirm" class="form-control" placeholder="Confirme a senha" formControlName="inputConfirm"
+              [class]="(submitted && formulario.get('inputConfirm').errors) || 
+                        (formulario.get('inputConfirm').errors && formulario.get('inputConfirm').dirty) ? 'is-invalid' : 
+                        formulario.get('inputConfirm').dirty ? 'is-valid' : '' "/>
+              <div *ngIf="formulario.get('inputConfirm').errors?.required"
+                    class="invalid-feedback" >
+                    <p>Confirme a senha!</p>
+              </div>
+              <div *ngIf="formulario.get('inputConfirm').errors?.mustMatch"
+                    class="invalid-feedback" >
+                    <p>Senhas devem ser iguais!</p>
+              </div>
             </div>
                                   
             <div>

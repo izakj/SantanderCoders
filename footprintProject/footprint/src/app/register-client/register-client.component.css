@@ -105,6 +105,25 @@
     border:2px solid #5FB739;
     border-radius: 20px;
   }
+
+  .container.register form.form.register .form-label-group .form-control:focus{
+    box-shadow: none;
+  }
+
+  .container.register form.form.register .form-label-group .invalid-feedback p{
+    background-color: #b73939;
+    padding: 6px 10px;
+    border-radius: 8px;
+    color: #fff;
+    width: max-content; 
+    display: inline-flex;
+    font-size: 14px;
+  }
+
+  .container.register form.form.register .form-label-group .is-invalid:focus{
+    border:2px solid #ff00006e;
+    border-radius: 20px;
+  }
   
   .container.register form.form.register label{
     font-size: 16px;
@@ -216,7 +235,7 @@
   @media(max-width:1366px){
     
     .container-fluid.register {
-      min-height: 860px;
+      min-height: 1020px;
     }
   
   }
