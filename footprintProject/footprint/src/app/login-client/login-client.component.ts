@@ -3,7 +3,7 @@ import * as $ from 'jquery';
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MustMatch } from '../_helpers/must-match.validator';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-client',
@@ -16,7 +16,8 @@ export class LoginClientComponent implements OnInit {
   public submitted: boolean = false;
 
   constructor(
-    private fb: FormBuilder) { }
+    private fb: FormBuilder,
+    private router: Router) { }
 
 
   ngOnInit(): void {
@@ -28,13 +29,14 @@ export class LoginClientComponent implements OnInit {
     if (this.formLogin.invalid) {
       return;
     }
-    // this.salvar();
-  };
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.formLogin.value));
+    this.router.navigate(['/dashboard']);
+  }
 
   public iniciarFormLogin() {
     this.formLogin = this.fb.group({
-      inputEmail: ['', [Validators.required, Validators.email]],
-      inputPassword: ['', Validators.required],
+      loginEmail: ['', [Validators.required, Validators.email]],
+      loginPassword: ['', Validators.required],
     });
     
   }

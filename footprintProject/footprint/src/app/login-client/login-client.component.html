@@ -50,22 +50,40 @@
       <div class="row login">
         <!-- <h5 class="">Login</h5> -->
         <br>
-        <form [formGroup]="formLogin"  class="form login">
+        <form [formGroup]="formLogin"  class="form login" (ngSubmit)="entrar()">
           <div class="form-label-group">
-            <label for="inputEmail">Usuário</label>
-            <input type="email" id="inputEmail" class="form-control" placeholder="Usuário">
+            <label for="loginEmail">Usuário</label>
+            <input type="email" id="loginEmail" class="form-control" placeholder="Usuário" formControlName="loginEmail" autofocus 
+            [class]="(submitted && formLogin.get('loginEmail').errors) || 
+            (formLogin.get('loginEmail').errors && formLogin.get('loginEmail').dirty) ? 'is-invalid' : 
+            formLogin.get('loginEmail').dirty ? 'is-valid' : '' "/>
+            <div *ngIf="formLogin.get('loginEmail').errors?.required"
+                  class="invalid-feedback" >
+                  <p>Campo e-mail é obrigatório!</p>
+            </div>
+            <div *ngIf="formLogin.get('loginEmail').errors?.email"
+                  class="invalid-feedback" >
+              <p>E-mail inválido!</p>
+            </div>
           </div>
 
           <div class="form-label-group">
-            <label for="inputPassword">Senha</label>
-            <input type="password" id="inputPassword" class="form-control" placeholder="Senha">
+            <label for="loginPassword">Senha</label>
+            <input type="password" id="loginPassword" class="form-control" placeholder="Senha" formControlName="loginPassword" 
+            [class]="(submitted && formLogin.get('loginPassword').errors) || 
+            (formLogin.get('loginPassword').errors && formLogin.get('loginPassword').dirty) ? 'is-invalid' : 
+            formLogin.get('loginPassword').dirty ? 'is-valid' : '' "/>
+            <div *ngIf="formLogin.get('loginPassword').errors?.required"
+                  class="invalid-feedback" >
+                  <p>Campo senha é obrigatório!</p>
+            </div>>
           </div>
 
           <div class="custom-control custom-checkbox mb-3">
             <input type="checkbox" class="custom-control-input" id="customCheck1">
             <label class="custom-control-label passwordRecovery" for="customCheck1">lembrar senha</label>
           </div>
-          <button class="btnPegada" type="submit" routerLinkActive="active" routerLink="/dashboard">Entrar</button>
+          <button class="btnPegada" type="submit" >Entrar</button>
           <a routerLink="/register" class="passwordRecovery" >Criar conta</a>
           <br>
           <a routerLink="/recovery" class="passwordRecovery">Recuperar senha</a>

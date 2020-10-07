@@ -117,6 +117,30 @@
     margin: 0;
     float: left;
   }
+
+  .container.login form.form.login input{
+    border:2px solid #5FB739;
+    border-radius: 20px;
+  }
+
+  .container.login form.form.login .form-label-group .form-control:focus{
+    box-shadow: none;
+  }
+
+  .container.login form.form.login .form-label-group .invalid-feedback p{
+    background-color: #b73939;
+    padding: 6px 10px;
+    border-radius: 8px;
+    color: #fff;
+    width: max-content; 
+    display: inline-flex;
+    font-size: 14px;
+  }
+
+  .container.login form.form.login .form-label-group .is-invalid:focus{
+    border:2px solid #ff00006e;
+    border-radius: 20px;
+  }
   
   .container.login form.form.login .passwordRecovery{
     font-size: 16px;

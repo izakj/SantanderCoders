@@ -3,6 +3,8 @@ import * as $ from 'jquery';
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Chart } from 'chart.js';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MustMatch } from '../_helpers/must-match.validator';
 // import {NgbdDropdownManualModule} from './app/dropdown-manual.module';
 
 
@@ -13,22 +15,49 @@ import { Chart } from 'chart.js';
 })
 
 export class DashboardClientComponent implements OnInit {
-  classContents = ["historic", "update", "tips", "configurations", "adm"]
-  classTips = ["cat1", "cat2", "cat3", "cat4", "cat5"]
-  numberQuestion = 0
-  numberTotalQuestion = 0
-  questionsChecked = []
+  classContents = ["historic", "update", "tips", "configurations", "adm"];
+  classTips = ["cat1", "cat2", "cat3", "cat4", "cat5"];
+  numberQuestion = 0;
+  numberTotalQuestion = 0;
+  questionsChecked = [];
+
+  public formConfigurations: FormGroup;
+  public submitted: boolean = false;
   
-  constructor() { }
+  constructor(
+    private fb: FormBuilder,
+  ) { }
   
   ngOnInit(): void {
     this.hiddenContent();
     this.showContent('historic')
     this.hiddenContentCategories()
     this.insertChart()
+    this.iniciarFormConfigurations();
+    
+  }
+
+  alterar() {
+    this.submitted = true;
+    if (this.formConfigurations.invalid) {
+      return;
+    }
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.formConfigurations.value));
+  }
+
+  public iniciarFormConfigurations() {
+    this.formConfigurations = this.fb.group({
+      configurationsEmail: ['', [Validators.required, Validators.email]],
+      oldPassword: ['', Validators.required],
+      newPassword: ['', Validators.required],
+      newPasswordConfirm: ['', Validators.required]
+    }, {
+        validator: MustMatch('newPassword', 'newPasswordConfirm')
+    });;
     
   }
   
+  // Chart Draw
   insertChart(){
     
     var myChart = new Chart('canvas', {
