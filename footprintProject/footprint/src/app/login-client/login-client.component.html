@@ -76,12 +76,12 @@
             <div *ngIf="formLogin.get('loginPassword').errors?.required"
                   class="invalid-feedback" >
                   <p>Campo senha é obrigatório!</p>
-            </div>>
+            </div>
           </div>
 
           <div class="custom-control custom-checkbox mb-3">
-            <input type="checkbox" class="custom-control-input" id="customCheck1">
-            <label class="custom-control-label passwordRecovery" for="customCheck1">lembrar senha</label>
+            <input type="checkbox" class="custom-control-input" id="checkboxRememberMe">
+            <label class="custom-control-label passwordRecovery" for="checkboxRememberMe">lembrar senha</label>
           </div>
           <button class="btnPegada" type="submit" >Entrar</button>
           <a routerLink="/register" class="passwordRecovery" >Criar conta</a>

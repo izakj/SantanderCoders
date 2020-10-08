@@ -27,7 +27,7 @@ export class RegisterClientComponent implements OnInit {
     if (this.formulario.invalid) {
       return;
     }
-    // alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.formulario.value));
+    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.formulario.value));
     this.router.navigate(['/dashboard']);
   };
 
