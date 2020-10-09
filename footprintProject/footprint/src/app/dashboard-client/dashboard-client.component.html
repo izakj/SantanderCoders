@@ -120,7 +120,14 @@
         <!-- Start Insert Content to Update -->
         <div class="row chartsPegada update">
             <div class="col-12">
-                <h3>Atualização</h3>
+                <h3>Atualização  {{ teste }} </h3>
+                
+                <ul>
+                    <li *ngFor="let register of  allQuestions; let i = index">
+                        {{ i+ 1 }} - {{ register.mail }}
+                    </li>
+                </ul>
+
                 <p>
                     It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
                 </p>
@@ -227,7 +234,7 @@
                     </div>
 
                     <button type="submit" class="btn btn-primary toAnalyze">Calcular CO2</button>
-                  </form>
+                </form>
             </div>
         </div>
         <!-- Ends Insert Content to Update -->
@@ -289,36 +296,18 @@
             <div class="col-12 squareConfigurations">
                 <h5>Configurações de Acesso</h5>
 
-                <form  class="form-configurations" [formGroup]="formConfigurations" (ngSubmit)="alterar()">
+                <form  class="form-configurations">
                     <div class="row">
                         <div class="col-12 col-lg-6">
                             <div class="form-label-group">
                                 <label for="configurationsEmail">E-mail</label>
-                                <input type="email" id="configurationsEmail" class="form-control" placeholder="Usuário" formControlName="configurationsEmail" autofocus 
-                                [class]="(submitted && formConfigurations.get('configurationsEmail').errors) || 
-                                (formConfigurations.get('configurationsEmail').errors && formConfigurations.get('configurationsEmail').dirty) ? 'is-invalid' : 
-                                formConfigurations.get('configurationsEmail').dirty ? 'is-valid' : '' "/>
-                                <div *ngIf="formConfigurations.get('configurationsEmail').errors?.required"
-                                      class="invalid-feedback" >
-                                      <p>Campo e-mail é obrigatório!</p>
-                                </div>
-                                <div *ngIf="formConfigurations.get('configurationsEmail').errors?.email"
-                                      class="invalid-feedback" >
-                                  <p>E-mail inválido!</p>
-                                </div>
-                              </div>
+                                <input type="email" id="configurationsEmail" class="form-control" placeholder="Usuário"> 
+                            </div>
                         </div>
                         <div class="col-12 col-lg-6">
                             <div class="form-label-group">
                                 <label for="oldPassword">Senha antiga</label>
-                                <input type="password" id="oldPassword" class="form-control" placeholder="Senha" formControlName="oldPassword" 
-                                [class]="(submitted && formConfigurations.get('oldPassword').errors) || 
-                                (formConfigurations.get('oldPassword').errors && formConfigurations.get('oldPassword').dirty) ? 'is-invalid' : 
-                                formConfigurations.get('oldPassword').dirty ? 'is-valid' : '' "/>
-                                <div *ngIf="formConfigurations.get('oldPassword').errors?.required"
-                                      class="invalid-feedback" >
-                                      <p>Campo 'senha antiga' é obrigatório!</p>
-                                </div>
+                                <input type="password" id="oldPassword" class="form-control" placeholder="Senha">
                             </div>   
                         </div>
                         
@@ -328,32 +317,14 @@
                         <div class="col-12 col-lg-6">
                             <div class="form-label-group">
                                 <label for="newPassword">Nova senha</label>
-                                <input type="password" id="newPassword" class="form-control" placeholder="Senha" formControlName="newPassword" 
-                                [class]="(submitted && formConfigurations.get('newPassword').errors) || 
-                                (formConfigurations.get('newPassword').errors && formConfigurations.get('newPassword').dirty) ? 'is-invalid' : 
-                                formConfigurations.get('newPassword').dirty ? 'is-valid' : '' "/>
-                                <div *ngIf="formConfigurations.get('newPassword').errors?.required"
-                                      class="invalid-feedback" >
-                                      <p>Campo 'nova senha' é obrigatório!</p>
-                                </div>
+                                <input type="password" id="newPassword" class="form-control" placeholder="Senha">
                             </div>   
                         </div>
 
                         <div class="col-12 col-lg-6">
                             <div class="form-label-group">
                                 <label for="newPasswordConfirm">Confirme a senha</label>
-                                <input type="password" id="newPasswordConfirm" class="form-control" placeholder="Confirme a senha" formControlName="newPasswordConfirm"
-                                [class]="(submitted && formConfigurations.get('newPasswordConfirm').errors) || 
-                                          (formConfigurations.get('newPasswordConfirm').errors && formConfigurations.get('newPasswordConfirm').dirty) ? 'is-invalid' : 
-                                          formConfigurations.get('newPasswordConfirm').dirty ? 'is-valid' : '' "/>
-                                <div *ngIf="formConfigurations.get('newPasswordConfirm').errors?.required"
-                                      class="invalid-feedback" >
-                                      <p>Confirme a nova senha!</p>
-                                </div>
-                                <div *ngIf="formConfigurations.get('newPasswordConfirm').errors?.mustMatch"
-                                      class="invalid-feedback" >
-                                      <p>Senhas devem ser iguais!</p>
-                                </div>
+                                <input type="password" id="newPasswordConfirm" class="form-control" placeholder="Confirme a senha">
                               </div>
                         </div>
                     </div>
@@ -375,7 +346,12 @@
 
             <!-- Start for Insert Qustion in the Database -->
             <div class="col-12 squareInsertQuestion adm">
-                <form action="#" class="formInsertQuestion adm">
+                <form class="formInsertQuestion adm"
+                    id="formInsertQuestion"
+                    #insertQuestionForm="ngForm" 
+                    (ngSubmit)="insertQuestion(insertQuestionForm.form);" 
+                    action=""
+                >
                     <h5>Cadastro de Pergunta</h5>
                     <div class="form-group">
                         <label for="question">Pergunta:</label>
@@ -440,7 +416,21 @@
                                   <option>RASCUNHO</option>
                                 </select>
                               </div>
+                        </div>
+                    </div>
 
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="form-group">
+                                <label for="selectCategory">Categoria</label>
+                                <select class="form-control" id="selectCategory">
+                                  <option>ALIMENTAÇÃO</option>
+                                  <option>ALOJAMENTO</option>
+                                  <option>TRANSPORTE</option>
+                                  <option>CONSUMO</option>
+                                  <option>RESÍDUOS</option>
+                                </select>
+                              </div>
                         </div>
                     </div>
                     <!-- Ends Insert Answers -->

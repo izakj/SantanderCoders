@@ -21,19 +21,18 @@ export class LoginClientComponent implements OnInit {
 
 
   ngOnInit(): void {
-    this.iniciarFormLogin();
+    this.startFormLogin();
   }
 
-  entrar() {
+  login() {
     this.submitted = true;
     if (this.formLogin.invalid) {
       return;
     }
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.formLogin.value));
     this.router.navigate(['/dashboard']);
   }
 
-  public iniciarFormLogin() {
+  public startFormLogin() {
     this.formLogin = this.fb.group({
       loginEmail: ['', [Validators.required, Validators.email]],
       loginPassword: ['', Validators.required],

@@ -50,7 +50,7 @@
       <div class="row login">
         <!-- <h5 class="">Login</h5> -->
         <br>
-        <form [formGroup]="formLogin"  class="form login" (ngSubmit)="entrar()">
+        <form [formGroup]="formLogin"  class="form login" (ngSubmit)="login()">
           <div class="form-label-group">
             <label for="loginEmail">Usuário</label>
             <input type="email" id="loginEmail" class="form-control" placeholder="Usuário" formControlName="loginEmail" autofocus 

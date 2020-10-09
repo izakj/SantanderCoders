@@ -3,10 +3,9 @@ import * as $ from 'jquery';
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Chart } from 'chart.js';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MustMatch } from '../_helpers/must-match.validator';
+import { ClientServiceService } from './../client-service.service';
 // import {NgbdDropdownManualModule} from './app/dropdown-manual.module';
-
 
 @Component({
   selector: 'app-dashboard-client',
@@ -17,46 +16,35 @@ import { MustMatch } from '../_helpers/must-match.validator';
 export class DashboardClientComponent implements OnInit {
   classContents = ["historic", "update", "tips", "configurations", "adm"];
   classTips = ["cat1", "cat2", "cat3", "cat4", "cat5"];
+  registerQuestion = {id: '', title: '', questionA: '' };
   numberQuestion = 0;
   numberTotalQuestion = 0;
   questionsChecked = [];
-
-  public formConfigurations: FormGroup;
-  public submitted: boolean = false;
+  questionRegister = {id: '', title: '',};
+  allQuestions;
+  teste = '';
   
-  constructor(
-    private fb: FormBuilder,
-  ) { }
+  constructor( private clientService: ClientServiceService ) { }
   
   ngOnInit(): void {
     this.hiddenContent();
     this.showContent('historic')
     this.hiddenContentCategories()
     this.insertChart()
-    this.iniciarFormConfigurations();
-    
+    this.getAllQuestions()
+
   }
 
-  alterar() {
-    this.submitted = true;
-    if (this.formConfigurations.invalid) {
-      return;
-    }
-    alert('SUCCESS!! :-)\n\n' + JSON.stringify(this.formConfigurations.value));
+  getAllQuestions()
+  {
+    this.clientService.toList().subscribe(response =>
+        this.allQuestions = response
+    );
   }
 
-  public iniciarFormConfigurations() {
-    this.formConfigurations = this.fb.group({
-      configurationsEmail: ['', [Validators.required, Validators.email]],
-      oldPassword: ['', Validators.required],
-      newPassword: ['', Validators.required],
-      newPasswordConfirm: ['', Validators.required]
-    }, {
-        validator: MustMatch('newPassword', 'newPasswordConfirm')
-    });;
-    
+  getAllSchedules() {
   }
-  
+
   // Chart Draw
   insertChart(){
     
@@ -152,8 +140,25 @@ export class DashboardClientComponent implements OnInit {
     this.numberTotalQuestion = $('.questionToAnalyze').length
     this.questionAnalyze()
     console.log(this.questionsChecked)
-  }    
-      
+  } 
+  
+  insertQuestion(form)
+  {
+
+    let titleInput = $('#question').val()
+    this.registerQuestion = {
+      id:  '',
+      title: ''+titleInput,
+      questionA: 'blblbla'
+    }
+ 
+    // this.questionsService.toAdd(this.registerQuestion).subscribe(() => {
+    //   this.registerQuestion = {id: '', title: '', questionA: '' };
+    // });
+
+    console.log(this.registerQuestion)
+  }
+    
   // To analyze the alternatives choose of the questions
   questionAnalyze ()//question component selected by class 
   {
