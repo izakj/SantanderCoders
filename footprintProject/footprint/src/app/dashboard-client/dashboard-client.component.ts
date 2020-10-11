@@ -3,7 +3,6 @@ import * as $ from 'jquery';
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { Chart } from 'chart.js';
-import { MustMatch } from '../_helpers/must-match.validator';
 import { ClientServiceService } from './../client-service.service';
 // import {NgbdDropdownManualModule} from './app/dropdown-manual.module';
 
@@ -16,11 +15,10 @@ import { ClientServiceService } from './../client-service.service';
 export class DashboardClientComponent implements OnInit {
   classContents = ["historic", "update", "tips", "configurations", "adm"];
   classTips = ["cat1", "cat2", "cat3", "cat4", "cat5"];
-  registerQuestion = {id: '', title: '', questionA: '' };
+  registerQuestion = {id: '', title: '', answerA: '', weightA: '', answerB: '', weightB: '', answerC: '', weightC: '', answerD: '', weightD: '', statusQuestion: '', categoryQuestion: ''};
   numberQuestion = 0;
   numberTotalQuestion = 0;
   questionsChecked = [];
-  questionRegister = {id: '', title: '',};
   allQuestions;
   teste = '';
   
@@ -31,19 +29,16 @@ export class DashboardClientComponent implements OnInit {
     this.showContent('historic')
     this.hiddenContentCategories()
     this.insertChart()
-    this.getAllQuestions()
+    // this.getAllQuestions()
 
   }
 
-  getAllQuestions()
-  {
-    this.clientService.toList().subscribe(response =>
-        this.allQuestions = response
-    );
-  }
-
-  getAllSchedules() {
-  }
+  // getAllQuestions()
+  // {
+  //   this.clientService.toList().subscribe(response =>
+  //       this.allQuestions = response
+  //   );
+  // }
 
   // Chart Draw
   insertChart(){
@@ -146,17 +141,40 @@ export class DashboardClientComponent implements OnInit {
   {
 
     let titleInput = $('#question').val()
+    let answerAinput = $('#answerA').val()
+    let weightAinput = $('#answerWeightA').val()
+    let answerBinput = $('#answerB').val()
+    let weightBinput = $('#answerWeightB').val()
+    let answerCinput = $('#answerC').val()
+    let weightCinput = $('#answerWeightC').val()
+    let answerDinput = $('#answerD').val()
+    let weightDinput = $('#answerWeightD').val()
+    let statusInput = $('#selectStatusQuestion').val()
+    let categoryInput = $('#selectCategory').val()
+
     this.registerQuestion = {
       id:  '',
-      title: ''+titleInput,
-      questionA: 'blblbla'
-    }
+      title: '' + titleInput,
+      answerA: '' + answerAinput,
+      weightA: ''+ weightAinput,
+      answerB: '' + answerBinput,
+      weightB: ''+ weightBinput,
+      answerC: '' + answerCinput,
+      weightC: ''+ weightCinput,
+      answerD: '' + answerDinput,
+      weightD: '' + weightDinput,
+      statusQuestion: '' + statusInput,
+      categoryQuestion: '' + categoryInput 
+
+    } 
  
     // this.questionsService.toAdd(this.registerQuestion).subscribe(() => {
     //   this.registerQuestion = {id: '', title: '', questionA: '' };
     // });
 
-    console.log(this.registerQuestion)
+     console.log(this.registerQuestion)
+    // console.log(form)
+    // console.log(statusInput)
   }
     
   // To analyze the alternatives choose of the questions

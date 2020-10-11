@@ -301,13 +301,34 @@
                         <div class="col-12 col-lg-6">
                             <div class="form-label-group">
                                 <label for="configurationsEmail">E-mail</label>
-                                <input type="email" id="configurationsEmail" class="form-control" placeholder="Usuário"> 
+                                <input type="email" id="configurationsEmail" name="configurationsEmail" required class="form-control" placeholder="Usuário" ngModel #configurationsEmail="ngModel" >
+                                
+                                <!-- Validation Field E-mail -->
+                                <div *ngIf="configurationsEmail.invalid && (configurationsEmail.dirty || configurationsEmail.touched)" class="alert alert-danger">
+
+                                    <div *ngIf="configurationsEmail.errors.required">
+                                        <p>Campo e-mail é obrigatório.</p>
+                                    </div>
+
+                                </div>
+
                             </div>
                         </div>
                         <div class="col-12 col-lg-6">
                             <div class="form-label-group">
                                 <label for="oldPassword">Senha antiga</label>
-                                <input type="password" id="oldPassword" class="form-control" placeholder="Senha">
+                                <input type="password" id="oldPassword" name="oldPassword" required class="form-control" placeholder="Senha antiga" ngModel #oldPassword="ngModel" >
+                                                                
+                                <!-- Validation Field Old Password -->
+                                <div *ngIf="oldPassword.invalid && (oldPassword.dirty || oldPassword.touched)" class="alert alert-danger">
+
+                                    <div *ngIf="oldPassword.errors.required">
+                                        <p>Campo senha antiga é obrigatório.</p>
+                                    </div>
+
+                                </div>
+
+                            
                             </div>   
                         </div>
                         
@@ -317,15 +338,39 @@
                         <div class="col-12 col-lg-6">
                             <div class="form-label-group">
                                 <label for="newPassword">Nova senha</label>
-                                <input type="password" id="newPassword" class="form-control" placeholder="Senha">
+                                <input type="password" id="newPassword" name="newPassword" required class="form-control" placeholder="Nova senha" ngModel #newPassword="ngModel">
+                                                                                            
+                                <!-- Validation Field New Password -->
+                                <div *ngIf="newPassword.invalid && (newPassword.dirty || newPassword.touched)" class="alert alert-danger">
+
+                                    <div *ngIf="newPassword.errors.required">
+                                        <p>Campo nova senha é obrigatório.</p>
+                                    </div>
+
+                                </div>
+
                             </div>   
                         </div>
 
                         <div class="col-12 col-lg-6">
                             <div class="form-label-group">
-                                <label for="newPasswordConfirm">Confirme a senha</label>
-                                <input type="password" id="newPasswordConfirm" class="form-control" placeholder="Confirme a senha">
-                              </div>
+                                <label for="newPasswordConfirm">Confirme a nova senha</label>
+                                <input type="password" name="newPasswordConfirm" id="newPasswordConfirm" compare="newPassword" class="form-control" required placeholder="Repita a nova senha" ngModel #newPasswordConfirm="ngModel">
+                                
+                                <!-- Validation Field New Password Confirmation -->
+                                <div *ngIf="newPasswordConfirm.invalid && (newPasswordConfirm.dirty || newPasswordConfirm.touched)" class="alert alert-danger">
+
+                                    <div *ngIf="newPasswordConfirm.errors.required">
+                                        <p>Confirme a nova senha.</p>
+                                    </div>
+
+                                    <div *ngIf="newPasswordConfirm.errors.compare">
+                                        <p>Senhas devem ser idênticas.</p>
+                                    </div>
+
+                                </div>
+
+                            </div>
                         </div>
                     </div>
                         
@@ -355,55 +400,145 @@
                     <h5>Cadastro de Pergunta</h5>
                     <div class="form-group">
                         <label for="question">Pergunta:</label>
-                        <input type="text" class="form-control" id="question">
+                        <input type="text" class="form-control" id="question" name="question" required placeholder="Insira a pergunta" ngModel #question="ngModel">
+                    
+                        <!-- Validation Field Question -->
+                        <div *ngIf="question.invalid && (question.dirty || question.touched)" class="alert alert-danger">
+
+                            <div *ngIf="question.errors.required">
+                                <p>Campo obrigatório.</p>
+                            </div>
+
+                        </div>
+                    
                     </div>
 
                     <!-- Starts Insert Answers -->
                     <div class="row">
-                        <div class="col-12 col-lg-10">
+                        <div class="col-12 col-lg-8">
                             <label for="answerA">Alternativa A:</label>
-                            <input type="text" class="form-control" id="answerA">
+                            <input type="text" class="form-control" id="answerA" name="answerA" required ngModel #answerA="ngModel" placeholder="Resposta A">
+
+                            <!-- Validation Field Answer A -->
+                            <div *ngIf="answerA.invalid && (answerA.dirty || answerA.touched)" class="alert alert-danger">
+
+                                <div *ngIf="answerA.errors.required">
+                                    <p>Campo obrigatório.</p>
+                                </div>
+
+                            </div>
+
                         </div>
 
-                        <div class="col-12 col-lg-2">
+                        <div class="col-12 col-lg-4">
                             <label for="answerWeightA">Peso (A):</label>
-                            <input type="text" class="form-control" id="answerWeightA">
+                            <input type="number" class="form-control" id="answerWeightA" name="answerWeightA" required ngModel #answerWeightA="ngModel" placeholder="Peso A">
+                        
+                            <!-- Validation Field Weight Answer A -->
+                            <div *ngIf="answerWeightA.invalid && (answerWeightA.dirty || answerWeightA.touched)" class="alert alert-danger">
+
+                                <div *ngIf="answerWeightA.errors.required">
+                                    <p>Campo obrigatório.</p>
+                                </div>
+
+                            </div>
+                        
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-12 col-lg-10">
+                        <div class="col-12 col-lg-8">
                             <label for="answerB">Alternativa B:</label>
-                            <input type="text" class="form-control" id="answerB">
+                            <input type="text" class="form-control" id="answerB" name="answerB" required ngModel #answerB="ngModel" placeholder="Resposta B">
+
+                            <!-- Validation Field Answer A -->
+                            <div *ngIf="answerB.invalid && (answerB.dirty || answerB.touched)" class="alert alert-danger">
+
+                                <div *ngIf="answerB.errors.required">
+                                    <p>Campo obrigatório.</p>
+                                </div>
+
+                            </div>
+
                         </div>
 
-                        <div class="col-12 col-lg-2">
+                        <div class="col-12 col-lg-4">
                             <label for="answerWeightB">Peso (B):</label>
-                            <input type="text" class="form-control" id="answerWeightB">
+                            <input type="number" class="form-control" id="answerWeightB" name="answerWeightB" required ngModel #answerWeightB="ngModel" placeholder="Peso B">
+                        
+                            <!-- Validation Field Weight Answer A -->
+                            <div *ngIf="answerWeightB.invalid && (answerWeightB.dirty || answerWeightB.touched)" class="alert alert-danger">
+
+                                <div *ngIf="answerWeightB.errors.required">
+                                    <p>Campo obrigatório.</p>
+                                </div>
+
+                            </div>
+                        
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-12 col-lg-10">
+                        <div class="col-12 col-lg-8">
                             <label for="answerC">Alternativa C:</label>
-                            <input type="text" class="form-control" id="answerC">
+                            <input type="text" class="form-control" id="answerC" name="answerC" required ngModel #answerC="ngModel" placeholder="Resposta C">
+
+                            <!-- Validation Field Answer A -->
+                            <div *ngIf="answerC.invalid && (answerC.dirty || answerC.touched)" class="alert alert-danger">
+
+                                <div *ngIf="answerC.errors.required">
+                                    <p>Campo obrigatório.</p>
+                                </div>
+
+                            </div>
+
                         </div>
 
-                        <div class="col-12 col-lg-2">
+                        <div class="col-12 col-lg-4">
                             <label for="answerWeightC">Peso (C):</label>
-                            <input type="text" class="form-control" id="answerWeightC">
+                            <input type="number" class="form-control" id="answerWeightC" name="answerWeightC" required ngModel #answerWeightC="ngModel" placeholder="Peso C">
+                        
+                            <!-- Validation Field Weight Answer A -->
+                            <div *ngIf="answerWeightC.invalid && (answerWeightC.dirty || answerWeightC.touched)" class="alert alert-danger">
+
+                                <div *ngIf="answerWeightC.errors.required">
+                                    <p>Campo obrigatório.</p>
+                                </div>
+
+                            </div>
+                        
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="col-12 col-lg-10">
+                        <div class="col-12 col-lg-8">
                             <label for="answerD">Alternativa D:</label>
-                            <input type="text" class="form-control" id="answerD">
+                            <input type="text" class="form-control" id="answerD" name="answerD" required ngModel #answerD="ngModel" placeholder="Resposta D">
+
+                            <!-- Validation Field Answer A -->
+                            <div *ngIf="answerD.invalid && (answerD.dirty || answerD.touched)" class="alert alert-danger">
+
+                                <div *ngIf="answerD.errors.required">
+                                    <p>Campo obrigatório.</p>
+                                </div>
+
+                            </div>
+
                         </div>
 
-                        <div class="col-12 col-lg-2">
+                        <div class="col-12 col-lg-4">
                             <label for="answerWeightD">Peso (D):</label>
-                            <input type="text" class="form-control" id="answerWeightD">
+                            <input type="number" class="form-control" id="answerWeightD" name="answerWeightD" required ngModel #answerWeightD="ngModel" placeholder="Peso D">
+                        
+                            <!-- Validation Field Weight Answer A -->
+                            <div *ngIf="answerWeightD.invalid && (answerWeightD.dirty || answerWeightD.touched)" class="alert alert-danger">
+
+                                <div *ngIf="answerWeightD.errors.required">
+                                    <p>Campo obrigatório.</p>
+                                </div>
+
+                            </div>
+                        
                         </div>
                     </div>
 
@@ -435,7 +570,7 @@
                     </div>
                     <!-- Ends Insert Answers -->
 
-                    <button type="submit" id="btnUpdateOrInsert" class="btn btn-primary toInsertQuestion">Cadastrar/Alterar</button>
+                    <button type="submit" id="btnUpdateOrInsert" class="btn btn-primary toInsertQuestion">Cadastrar</button>
                 </form>
             </div>
             <!-- Ends for Insert Qustion in the Database -->

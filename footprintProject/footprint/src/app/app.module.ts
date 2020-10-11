@@ -13,6 +13,7 @@ import { AboutUSComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { RecoveryPasswordComponent } from './recovery-password/recovery-password.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CompareValidatorDirective } from './_helpers/compare-validators.directive';
 
 // import { RegisterClientComponent } from './register-client/register-client.component';
 // import { LoginClientComponent } from './login-client/login-client.component';
@@ -30,6 +31,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ContactUsComponent,
     RecoveryPasswordComponent,
     PageNotFoundComponent,
+    CompareValidatorDirective,
   ],
   imports: [
     BrowserModule,
